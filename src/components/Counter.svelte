@@ -1,5 +1,4 @@
 <script>
-
   import { writable } from "svelte/store";
 
   const storedCount = JSON.parse(localStorage.getItem("svelty"))?.count || 0;

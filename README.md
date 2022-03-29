@@ -1,9 +1,14 @@
 # Astro + Svelte Example
 
+This was initialized with the following command:
+
 ```
 npm init astro -- --template framework-svelte
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/framework-svelte)
+This example showcases Astro working with [Svelte](https://svelte.dev/),
+and loading the component client-side with `client:only="svelte"`.
 
-This example showcases Astro working with [Svelte](https://svelte.dev/).
+Relevant docs:
+
+https://docs.astro.build/en/core-concepts/framework-components/#available-hydration-directives
