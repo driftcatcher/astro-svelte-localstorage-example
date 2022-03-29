@@ -1,5 +1,14 @@
 <script>
-  let count = 0;
+
+  import { writable } from "svelte/store";
+
+  const storedCount = Number(JSON.parse(localStorage.getItem("count") || "0"));
+  let count = writable(storedCount);
+  count.subscribe(value => {
+      localStorage.setItem("count", JSON.stringify(Number(value)));
+  });
+
+  // let count = 0;
 
   function add() {
     count += 1;
