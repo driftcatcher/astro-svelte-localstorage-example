@@ -2,26 +2,24 @@
 
   import { writable } from "svelte/store";
 
-  const storedCount = Number(JSON.parse(localStorage.getItem("count") || "0"));
+  const storedCount = JSON.parse(localStorage.getItem("svelty"))?.count || 0;
   let count = writable(storedCount);
   count.subscribe(value => {
-      localStorage.setItem("count", JSON.stringify(Number(value)));
+      localStorage.setItem("svelty", JSON.stringify({count: Number(value)}));
   });
 
-  // let count = 0;
-
   function add() {
-    count += 1;
+    $count += 1;
   }
 
   function subtract() {
-    count -= 1;
+    $count -= 1;
   }
 </script>
 
 <div class="counter">
   <button on:click={subtract}>-</button>
-  <pre>{ count }</pre>
+  <pre>{ $count }</pre>
   <button on:click={add}>+</button>
 </div>
 <div class="message">
